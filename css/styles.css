@@ -53,6 +53,7 @@ header {
 
 nav a {
 	display: block;
+	text-decoration: none;
 }
 
 .home-button,
@@ -118,6 +119,43 @@ nav a {
 	padding-top: 2%;
 }
 
+/*contact*/
+
+form {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	align-items: center;
+	justify-content: space-evenly;
+}
+
+form input textarea {
+	color: #adb5bd;
+	border-radius: 20px;
+	overflow: hidden;
+	box-sizing: border-box;
+	border: 2px solid #212529;
+	resize: horizontal;
+}
+
+label {
+	color: #e9ecef;
+}
+
+button {
+	line-height: 2.5;
+	padding: 0 20px;
+	font-size: 1rem;
+	text-align: center;
+	cursor: pointer;
+	border-radius: 10px;
+	background-color: #ff206e;
+	color: #e9ecef;
+}
+
+.error {
+	color: red;
+}
 /*footer*/
 
 footer p,
@@ -125,6 +163,7 @@ footer a {
 	color: #e9ecef;
 	display: flex;
 	margin: 15px 15px 15px;
+	text-decoration: none;
 }
 
 body {

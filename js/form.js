@@ -36,7 +36,7 @@ function validateForm() {
 		subjectError.textContent = "Subject is required";
 		isValid = false;
 	} else if (subject.length <= 15) {
-		subjectError.textContent = "Subject must be more tha 15 characters";
+		subjectError.textContent = "Subject must be more than 15 characters";
 		isValid = false;
 	}
 
@@ -48,8 +48,10 @@ function validateForm() {
 		isValid = false;
 	}
 
-	function isValidEmail(email) {
-		var emailRegex = /\S+@\S+\.\S+/;
-		return emailRegex.test(email);
-	}
+	return isValid;
+}
+
+function isValidEmail(email) {
+	var emailRegex = /\S+@\S+\.\S+/;
+	return emailRegex.test(email);
 }

@@ -30,7 +30,30 @@ document.addEventListener("DOMContentLoaded", async () => {
 	postImage.src = results.images[0].src;
 	postImage.alt = `${results.name} Post Image`;
 
-	const gameText = document.getElementById("post-text");
-	gameText.innerHTML = results.description;
+	const postText = document.getElementById("post-text");
+	postText.innerHTML = results.description;
 	postDetails.className = "post-text-content";
+
+	var modal = document.getElementById("myModal");
+	var img = document.getElementById("post-image");
+	var modalImg = document.getElementById("img01");
+	var captionText = document.getElementById("caption");
+
+	img.onclick = function () {
+		modal.style.display = "block";
+		modalImg.src = this.src;
+		captionText.innerHTML = this.alt;
+	};
+
+	var span = document.getElementsByClassName("close")[0];
+	span.onclick = function () {
+		modal.style.display = "none";
+	};
+
+	window.onclick = function (event) {
+		if (event.target == modal) {
+			modal.style.display = "none";
+		}
+	};
+	productList.removeChild(productList.getElementsByClassName("lds-dual-ring")[0]);
 });

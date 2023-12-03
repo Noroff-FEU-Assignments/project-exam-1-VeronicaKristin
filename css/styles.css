@@ -65,7 +65,80 @@ nav a {
 	display: flex;
 	align-items: center;
 }
+/*modal*/
+.post_image {
+	border-radius: 5px;
+	cursor: pointer;
+	transition: 0.3s;
+}
 
+.post_image:hover {
+	opacity: 0.7;
+}
+
+.modal {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	padding-top: 100px;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgb(0, 0, 0);
+	background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+	margin: auto;
+	display: block;
+	width: 80%;
+	max-width: 700px;
+}
+
+#caption {
+	margin: auto;
+	display: block;
+	width: 80%;
+	max-width: 700px;
+	text-align: center;
+	color: #ccc;
+	padding: 10px 0;
+	height: 150px;
+}
+
+.modal-content,
+#caption {
+	animation-name: zoom;
+	animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+	from {
+		transform: scale(0);
+	}
+	to {
+		transform: scale(1);
+	}
+}
+
+.close {
+	position: absolute;
+	top: 15px;
+	right: 35px;
+	color: #f1f1f1;
+	font-size: 40px;
+	font-weight: bold;
+	transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+	color: #bbb;
+	text-decoration: none;
+	cursor: pointer;
+}
 /* Home */
 
 .intro {
@@ -82,6 +155,62 @@ nav a {
 	display: flex;
 	justify-content: space-evenly;
 	padding: 5%;
+}
+
+/* carousel*/
+
+body {
+	height: 100vh;
+	display: flex;
+}
+
+.slider {
+	width: 100%;
+	max-width: 800px;
+	height: 350px;
+	position: relative;
+	overflow: hidden;
+	border-radius: 15px;
+}
+
+.slide {
+	width: 100%;
+	max-width: 800px;
+	height: 350px;
+	position: absolute;
+	transition: all 0.5s;
+}
+
+.slide img {
+	width: 100%;
+	height: 100%;
+}
+
+.btn {
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	padding: 10px;
+	border: none;
+	border-radius: 50%;
+	z-index: 10px;
+	cursor: pointer;
+	background-color: #fff;
+	font-size: 18px;
+}
+
+.btn:active {
+	transform: scale(1.1);
+}
+
+.btn-prev {
+	top: 45%;
+	left: 2%;
+}
+
+.btn-next {
+	top: 45%;
+	right: 2%;
 }
 
 /*Contact*/
@@ -285,5 +414,11 @@ footer {
 @media (max-width: 600px) {
 	.footer {
 		flex-direction: column;
+	}
+}
+
+@media only screen and (max-width: 700px) {
+	.modal-content {
+		width: 100%;
 	}
 }

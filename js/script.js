@@ -27,9 +27,16 @@ document.addEventListener("DOMContentLoaded", async () => {
 		product.appendChild(Object.assign(document.createElement("img"), { src: item.images[0].src, className: "all-posts_photos", alt: item.name }));
 
 		product.appendChild(
+			Object.assign(document.createElement("p"), {
+				innerText: item.short_description,
+				className: "post-description",
+			})
+		);
+
+		product.appendChild(
 			Object.assign(document.createElement("a"), {
 				href: `/post-specific.html?id=${item.id}`,
-				innerHTML: "<p>read more</p>",
+				innerHTML: "<p>Read more</p>",
 				style: "background: black",
 			})
 		);

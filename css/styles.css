@@ -7,6 +7,7 @@ body {
 h1,
 h2,
 h3,
+h4,
 p,
 li {
 	color: #e9ecef;
@@ -213,6 +214,44 @@ body {
 	right: 2%;
 }
 
+/*All posts*/
+
+.post-title {
+	display: block;
+	text-align: center;
+}
+
+.post-item {
+	border: 1px solid #ff206e;
+}
+
+.post-description {
+	display: block;
+	text-align: center;
+	padding: 10px;
+}
+.all-posts-content {
+	overflow: hidden;
+	margin: 20px;
+	display: grid;
+	grid-template-columns: repeat(3, 33%);
+	grid-gap: 10px;
+	min-height: 400px;
+}
+.all-posts_photos {
+	width: 100%;
+	height: auto;
+}
+
+.button {
+	display: block;
+	padding: 10px;
+	text-align: center;
+	color: #fff;
+	text-decoration: none;
+	border-radius: 4px;
+	margin-top: 10px;
+}
 /*Contact*/
 
 .contact-heading {
@@ -409,11 +448,19 @@ footer {
 		align-items: center;
 		justify-content: space-around;
 	}
+
+	.all-posts-content {
+		grid-template-columns: repeat(2, 50%);
+	}
 }
 
 @media (max-width: 600px) {
 	.footer {
 		flex-direction: column;
+	}
+
+	.all-posts-content {
+		grid-template-columns: repeat(1, 100%);
 	}
 }
 
